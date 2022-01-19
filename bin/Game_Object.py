@@ -1,6 +1,7 @@
 from turtle import Turtle
 
 class Game_Object(Turtle): 
+
     def __init__(self) -> None:
         super().__init__()
         self.speed(0) # sets the animation speed
@@ -30,16 +31,5 @@ class Game_Object(Turtle):
         self.pen_up()
         self.set_position(x, y)
 
-    def move_surfer_left(self, move_distance):
-        x = self.xcor()
-        if(x < -400): return -1
-        x -= move_distance
-        self.setx(x)
-
-    def move_surfer_right(self, move_distance):
-        x = self.xcor()
-        if(x < -400): return -1
-        x += move_distance
-        self.setx(x)
 
 
