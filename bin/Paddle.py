@@ -1,3 +1,4 @@
+from typing import Tuple
 from .Game_Object import Game_Object
 
 class Paddle(Game_Object):
@@ -5,6 +6,9 @@ class Paddle(Game_Object):
     def __init__(self, right_x) -> None:
         super().__init__()
         self.window_x = right_x/2 -60
+
+    def get_current_coor(self) -> Tuple:
+        return (self.xcor(), self.ycor())
 
     def move_paddle_left(self, move_distance):
         x = self.xcor()
