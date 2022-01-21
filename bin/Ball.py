@@ -7,21 +7,19 @@ class Ball(Game_Object):
     direction_coefficient_x = 1
     direction_coefficient_y = 1
 
-    def __init__(self) -> None:
+    def __init__(self, ball_speed) -> None:
         super().__init__()
         self.direction_coefficient_x = choice([-1, 1])
         self.direction_coefficient_y = choice([-1, 1])
+        self.set_dxy(ball_speed)
 
     def set_dxy(self, change): 
         self.dx = change
         self.dy = change
 
-    def move_ball(self, change, paddle_1_coor, paddle_2_coor):
+    def move_ball(self, paddle_1_coor, paddle_2_coor):
         # get current ball coordinates
         ball_x, ball_y = self.xcor(), self.ycor()
-
-        # set dx and dy
-        self.set_dxy(change)
 
         # handle x or length window boundary 
         if ball_x > 290:
